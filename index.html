@@ -8,7 +8,6 @@
 
 <body>
   <header>
-    <!-- правильным ли будет обернуть элементы в шапке построчно в div для дальнейшего удобства при стилизации? -->
     <a>
       <img src="https://via.placeholder.com/220x47" width="220" height="47" alt="Логотип компании «Техномарт»">
     </a>
@@ -16,20 +15,15 @@
       <input type="text" placeholder="Поиск">
       <button type="submit">Найти</button>
     </form>
-    <!-- следует ли последующие три ссылки объединить в список? -->
-    <!-- выделил счетчики в span для дальнейшей обработки в JS -->
     <a href="blank.html">Закладки:<span class="bookmarks-counter">0</span></a>
     <a href="blank.html">Корзина:<span class="cart-counter">0</span></a>
     <a href="blank.html">Оформить заказ</a>
-    <p>
+    <h1>
       Интернет-магазин <br>
       строительных материалов <br>
       и инструментов для ремонта
-    </p>
+    </h1>
     <section>
-      <!-- мне кажется не совсем логичным создавать section в хедере, т.к. здесь появляются заголовки h2,
-      а h1 появляется только ниже в main, это несколько ломает структуру документа.
-      Но здесь явно видно группы элементов, которые можно логично и семантично сгруппировать. Как быть? -->
       <h2 class="visually-hidden">Контакты</h2>
       <a href="tel:+78125550555">+7 (812) 555-05-55</a>
       <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
@@ -63,10 +57,7 @@
     <section>
       <h2>Промо-блок</h2>
       <ul>
-        <li>
-          <!-- Метку "New" лучше сделать отдельным тегом или псевдоэлементом при стилизации? 
-          (как здесь так и в карточках товаров)-->
-          <p>New</p>
+        <li class="item-new">
           <h3>Материалы</h3>
           <a href="catalog.html">На любой вкус</a>
           <img src="https://via.placeholder.com/44x65" width="44" height="65" alt="Ведерко с краской">
@@ -123,9 +114,8 @@
           <button type="button">Купить</button>
           <button type="button">В закладки</button>
         </li>
-        <li>
+        <li class="item-new">
           <h3><a href="blank.html">Перфоратор BOSCH BFG 3000</a></h3>
-          <p>New</p>
           <p class="old-price"><s>22500 Р.</s></p>
           <p class="new-price">15500 Р.</p>
           <img src="https://via.placeholder.com/185x165" width="185" height="165" alt="Перфоратор BOSCH BFG 3000">
@@ -140,9 +130,8 @@
           <button type="button">Купить</button>
           <button type="button">В закладки</button>
         </li>
-        <li>
+        <li class="item-new">
           <h3><a href="blank.html">Перфоратор BOSCH BFG 2000</a></h3>
-          <p>New</p>
           <p class="old-price"><s>22500 Р.</s></p>
           <p class="new-price">12500 Р.</p>
           <img src="https://via.placeholder.com/185x165" width="185" height="165" alt="Перфоратор BOSCH BFG 2000">
@@ -265,10 +254,9 @@
     </section>
   </main>
   <footer>
-    <img src="https://via.placeholder.com/220x68" width="220" height="68" alt="Логотип компании Техномарт">
-    <!-- есть сомнения в необходимости section и h2-->
     <section>
       <h2 class="visually-hidden">Контакты</h2>
+      <img src="https://via.placeholder.com/220x68" width="220" height="68" alt="Логотип компании Техномарт">
       <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 </p>
       <a href="tel:+78125550555">+7 (812) 555-05-55</a>
     </section>
@@ -323,7 +311,7 @@
     <button type="button">Закрыть</button>
   </div>
 
-  <div class="maps-popup">
+  <div class="map-popup">
     <div class="map-container">Здесь будет карта</div>
     <button type="button">Закрыть</button>
   </div>
