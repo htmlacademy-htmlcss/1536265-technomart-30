@@ -4,12 +4,16 @@
 <head>
   <meta charset="utf-8">
   <title>Интернет-магазин "Техномарт"</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="img/favicon/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/favicon/180.png">
+  <link rel="manifest" href="manifest.webmanifest">
 </head>
 
 <body>
   <header>
     <a>
-      <img src="https://via.placeholder.com/220x47" width="220" height="47" alt="Логотип компании «Техномарт»">
+      <img src="img/logo-technomart.svg" width="108" height="18" alt="Логотип компании «Техномарт»">
     </a>
     <form action="https://echo.htmlacademy.ru" method="post">
       <input type="text" placeholder="Поиск">
@@ -60,27 +64,23 @@
         <li class="item-new">
           <h3>Материалы</h3>
           <a href="catalog.html">На любой вкус</a>
-          <img src="https://via.placeholder.com/44x65" width="44" height="65" alt="Ведерко с краской">
+          <!-- убрал из разметки плиток изображения, т.к. они декоративные -->
         </li>
         <li>
           <h3>Инструмент</h3>
           <a href="catalog.html">На все случаи</a>
-          <img src="https://via.placeholder.com/75x61" width="75" height="61" alt="Дрель">
         </li>
         <li>
           <h3>Техника</h3>
           <a href="catalog.html">Для стройки</a>
-          <img src="https://via.placeholder.com/78x62" width="78" height="62" alt="Трактор">
         </li>
         <li>
           <h3>Скидки 50%</h3>
           <a href="blank.html">На 350 товаров</a>
-          <img src="https://via.placeholder.com/59x72" width="59" height="72" alt="Корзина с покупками">
         </li>
         <li>
           <h3>Доставка</h3>
           <a href="blank.html">Бесплатно</a>
-          <img src="https://via.placeholder.com/78x63" width="78" height="63" alt="Грузовик">
         </li>
       </ul>
       <div class="slider">
@@ -88,13 +88,14 @@
           <li>
             <h3>Перфораторы</h3>
             <p>Настоящие мужские игрушки</p>
-            <img src="https://via.placeholder.com/620x266" width="620" height="266"
+            <!-- картинки в слайдере тоже кажутся декоративными (и в CSS их удобнее вставить), но тут я сомневаюсь. -->
+            <img src="img/slider-perforator.jpg" width="620" height="266"
               alt="Мужчина сверлит стену перфоратором">
           </li>
           <li class="visually-hidden">
             <h3>Дрели</h3>
             <p>Соседям на радость!</p>
-            <img src="https://via.placeholder.com/620x266" width="620" height="266" alt="Мужчина сверлит стену дрелью">
+            <img src="img/slider-drill.jpg" width="620" height="266" alt="Мужчина сверлит стену дрелью">
           </li>
         </ul>
         <a href="catalog.html">Открыть каталог</a>
@@ -110,7 +111,7 @@
           <h3><a href="blank.html">Перфоратор BOSCH BFG 9000</a></h3>
           <p class="old-price"><s>32500 Р.</s></p>
           <p class="new-price">25500 Р.</p>
-          <img src="https://via.placeholder.com/185x165" width="185" height="165" alt="Перфоратор BOSCH BFG 9000">
+          <img src="img/bosh-9000.jpg" width="185" height="165" alt="Перфоратор BOSCH BFG 9000">
           <button type="button">Купить</button>
           <button type="button">В закладки</button>
         </li>
@@ -118,7 +119,7 @@
           <h3><a href="blank.html">Перфоратор BOSCH BFG 3000</a></h3>
           <p class="old-price"><s>22500 Р.</s></p>
           <p class="new-price">15500 Р.</p>
-          <img src="https://via.placeholder.com/185x165" width="185" height="165" alt="Перфоратор BOSCH BFG 3000">
+          <img src="img/bosh-3000.jpg" width="185" height="165" alt="Перфоратор BOSCH BFG 3000">
           <button type="button">Купить</button>
           <button type="button">В закладки</button>
         </li>
@@ -126,7 +127,7 @@
           <h3><a href="blank.html">Перфоратор BOSCH BFG 6000</a></h3>
           <p class="old-price"><s>30500 Р.</s></p>
           <p class="new-price">25500 Р.</p>
-          <img src="https://via.placeholder.com/185x165" width="185" height="165" alt="Перфоратор BOSCH BFG 6000">
+          <img src="img/bosh-6000.jpg" width="185" height="165" alt="Перфоратор BOSCH BFG 6000">
           <button type="button">Купить</button>
           <button type="button">В закладки</button>
         </li>
@@ -134,7 +135,7 @@
           <h3><a href="blank.html">Перфоратор BOSCH BFG 2000</a></h3>
           <p class="old-price"><s>22500 Р.</s></p>
           <p class="new-price">12500 Р.</p>
-          <img src="https://via.placeholder.com/185x165" width="185" height="165" alt="Перфоратор BOSCH BFG 2000">
+          <img src="img/bosh-2000.jpg" width="185" height="165" alt="Перфоратор BOSCH BFG 2000">
           <button type="button">Купить</button>
           <button type="button">В закладки</button>
         </li>
@@ -146,43 +147,43 @@
           <ul>
             <li>
               <a href="blank.html">
-                <img src="https://via.placeholder.com/220x145" width="220" height="145" alt="Логотип компании BOSCH">
+                <img src="img/bosch.png" width="126" height="37" alt="Логотип компании BOSCH">
               </a>
             </li>
             <li>
               <a href="blank.html">
-                <img src="https://via.placeholder.com/220x145" width="220" height="145" alt="Логотип компании Makita">
+                <img src="img/makita.png" width="123" height="40" alt="Логотип компании Makita">
               </a>
             </li>
             <li>
               <a href="blank.html">
-                <img src="https://via.placeholder.com/220x145" width="220" height="145" alt="Логотип компании DeWalt">
+                <img src="img/dewalt.png" width="146" height="44" alt="Логотип компании DeWalt">
               </a>
             </li>
             <li>
               <a href="blank.html">
-                <img src="https://via.placeholder.com/220x145" width="220" height="145"
+                <img src="img/interskol.png" width="200" height="76"
                   alt="Логотип компании Интерскол">
               </a>
             </li>
             <li>
               <a href="blank.html">
-                <img src="https://via.placeholder.com/220x145" width="220" height="145" alt="Логотип компании Hitachi">
+                <img src="img/hitachi.png" width="169" height="31" alt="Логотип компании Hitachi">
               </a>
             </li>
             <li>
               <a href="blank.html">
-                <img src="https://via.placeholder.com/220x145" width="220" height="145" alt="Логотип компании LG">
+                <img src="img/lg.png" width="121" height="73" alt="Логотип компании LG">
               </a>
             </li>
             <li>
               <a href="blank.html">
-                <img src="https://via.placeholder.com/220x145" width="220" height="145" alt="Логотип компании AEG">
+                <img src="img/aeg.png" width="151" height="98" alt="Логотип компании AEG">
               </a>
             </li>
             <li>
               <a href="blank.html">
-                <img src="https://via.placeholder.com/220x145" width="220" height="145" alt="Логотип компании Metabo">
+                <img src="img/metabo.png" width="206" height="73" alt="Логотип компании Metabo">
               </a>
             </li>
           </ul>
@@ -209,7 +210,7 @@
             к вашему подъезду совершенно бесплатно! <br>
             Ведь мы неплохо заработаем, <br>
             поднимая его на ваш этаж!</p>
-          <img src="https://via.placeholder.com/468x261" width="468" height="261" alt="Синий грузовик">
+          <!-- удалил, т.к. декоративные -->
         </li>
         <li>
           <h3>Гарантия</h3>
@@ -218,14 +219,12 @@
             возгоранием, вы всегда можете быть уверены в нашей <br>
             гарантии. Мы обменяем сгоревший товар на новый. <br>
             Дом уж восстановите как-нибудь сами.</p>
-          <img src="https://via.placeholder.com/389x283" alt="Значок 100%">
         </li>
         <li>
           <h3>Кредит</h3>
           <p>Залезть в долговую яму стало проще! <br>
             Кредитные консультанты придут вам на помощь.</p>
           <a href="blank.html">Отправить заявку</a>
-          <img src="https://via.placeholder.com/465x285" alt="Договор и зеленая купюра">
         </li>
       </ul>
     </section>
@@ -248,7 +247,7 @@
       <p>Вы можете забрать товар сами,<br>
         заехав в наш офис:</p>
       <a href="blank.html">
-        <img src="https://via.placeholder.com/300x158" width="300" height="158" alt="Схема проезда">
+        <img src="img/map-mini.png" width="300" height="158" alt="Схема проезда к дому №19 по ул.Большой Конюшенной">
       </a>
       <a href="blank.html">Заблудились? Напишите нам!</a>
     </section>
@@ -256,7 +255,7 @@
   <footer>
     <section>
       <h2 class="visually-hidden">Контакты</h2>
-      <img src="https://via.placeholder.com/220x68" width="220" height="68" alt="Логотип компании Техномарт">
+      <img src="img/logo-technomart.svg" width="138" height="23" alt="Логотип компании Техномарт">
       <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 </p>
       <a href="tel:+78125550555">+7 (812) 555-05-55</a>
     </section>
@@ -306,7 +305,7 @@
       <input type="text" name="email" id="write-us_email" placeholder="email@example.com">
       <label for="write-us_message">Текст письма:</label>
       <textarea name="message" id="write-us_message" cols="30" rows="10" placeholder="В свободной форме"></textarea>
-      <button>Отправить</button>
+      <button type="submit">Отправить</button>
     </form>
     <button type="button">Закрыть</button>
   </div>
