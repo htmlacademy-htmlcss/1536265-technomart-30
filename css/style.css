@@ -157,8 +157,18 @@
   --font-ptsans: "PT Sans", "Arial", sans-serif;
 }
 
-body {
+.page {
+  height: 100%;
   margin: 0;
+  padding: 0;
+}
+
+.page-body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
 }
 
 img {
@@ -173,14 +183,6 @@ a {
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-.visually-hidden {
-  position: absolute;
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
 }
 
 .main-nav-list,
@@ -200,7 +202,14 @@ a {
 .sort-order-list,
 .products-list,
 .pagination {
+  padding: 0;
+  margin: 0;
   list-style: none;
+}
+
+.container {
+  max-width: 940px;
+  margin: 0 auto;
 }
 
 /* General */
@@ -293,7 +302,7 @@ a {
   color: var(--regular-text);
 }
 
-.continue-button{
+.continue-button {
   font-family: var(--font-cuprum);
   border: none;
 }
@@ -332,10 +341,26 @@ a {
   background-color: var(--accent-1-active);
 }
 
+.site-header,
+.promo{
+  margin-bottom: 60px;
+}
+
+.popular-products,
+.popular-brands,
+.services{
+  margin-bottom: 70px;
+}
+
+.index-columns{
+  margin-bottom: 66px;
+}
 
 /* Title */
-
+/* TODO: вынести сброс отступов в отдельное свойство */
 .title {
+  margin: 0;
+  padding: 0;
   font: normal 30px/30px var(--font-cuprum);
   text-transform: uppercase;
 }
@@ -352,6 +377,17 @@ a {
   font-family: var(--font-cuprum);
   font-weight: 400;
   background-color: var(--additional-bg);
+}
+
+.end-bar {
+  background-color: var(--additional-nav-bg);
+  width: 100%;
+}
+
+.header-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
 }
 
 .header-logo,
@@ -372,7 +408,7 @@ a {
   line-height: 24px;
 }
 
-.main-nav-item a{
+.main-nav-item a {
   font: inherit;
   color: inherit;
 }
@@ -406,20 +442,37 @@ a {
 }
 
 .header-title {
+  margin-left: 30px;
+  margin-top: 42px;
   font-style: italic;
   font-size: 16px;
   line-height: 23px;
 }
 
+.header-contacts {
+  justify-self: start;
+  text-align: center;
+  margin-top: 46px;
+}
+
 .header-phone {
+  display: block;
+  width: 270px;
   font-size: 21px;
   line-height: 30px;
   font-weight: 700;
+  border: 3px solid var(--main-bg);
 }
 
 .header-address {
   font-size: 14px;
   line-height: 24px;
+}
+
+.authorization,
+.profile {
+  justify-self: end;
+  margin-top: 46px;
 }
 
 .authorization-sign-up,
@@ -433,7 +486,7 @@ a {
 .authorization-sign-up:hover,
 .authorization-sign-in:hover,
 .profile-orders:hover,
-.profile-cabinet:hover{
+.profile-cabinet:hover {
   color: var(--accent-1);
 }
 
@@ -441,7 +494,7 @@ a {
 .authorization-sign-in:active,
 .profile-orders:active,
 .profile-cabinet:active,
-.profile-username:active{
+.profile-username:active {
   color: var(--regular-text-active);
 }
 
@@ -467,11 +520,11 @@ a {
   background-color: var(--basic-nav-bg);
 }
 
-.main-nav-item:hover{
+.main-nav-item:hover {
   background-color: var(--nav-bg-hover);
 }
 
-.main-nav-item:active{
+.main-nav-item:active {
   background-color: var(--nav-bg-active);
   color: var(--invert-text-active);
 }
@@ -482,7 +535,21 @@ a {
   font-family: var(--font-cuprum);
 }
 
+.promo-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 123px 123px 123px;
+  gap: 20px;
+}
+
+.promo-item{
+  padding: 22px;
+}
+
 .promo-title {
+  margin: 0;
+  margin-bottom: 14px;
+  padding: 0;
   font-size: 24px;
   line-height: 30px;
   font-weight: 700;
@@ -515,19 +582,31 @@ a {
   background-color: var(--promo-button-bg);
 }
 
-.promo-link:hover{
+.promo-link:hover {
   background-color: var(--promo-button-bg-hover);
 }
 
-.promo-link:active{
+.promo-link:active {
   background-color: var(--promo-button-bg-active);
 }
 
 .slider {
-  background-color: var(--picture-bg);
+  grid-column: 1 / span 2;
+  grid-row: 2 / -1;
+  position: relative;
+}
+
+.slider-list {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .slider-title {
+  margin: 0;
+  padding-top: 24px;
+  padding-bottom: 5px;
   font-weight: 700;
   font-size: 36px;
   line-height: 36px;
@@ -535,20 +614,46 @@ a {
 }
 
 .slider-text {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 16px;
   font-size: 18px;
   line-height: 24px;
 }
 
 .slider-title,
 .slider-text {
+  padding-left: 24px;
   background-color: var(--slider-text-bg);
+}
+
+.slider-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: var(--picture-bg);
 }
 
 /* Popular */
 
-/* TODO: перекинуть фон на обертку */
-.popular-title {
+.title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 90px;
+  margin-bottom: 20px;
+  padding-left: 28px;
+  padding-right: 20px;
   background-color: var(--title-bg);
+}
+
+.popular-products-list {
+  display: grid;
+  grid-template-columns: repeat(4, 220px);
+  grid-template-rows: 320px;
+  column-gap: 20px;
 }
 
 /* Product card */
@@ -556,6 +661,7 @@ a {
 .product-item {
   font-family: var(--font-ptsans);
   background-color: var(--main-bg);
+  border: 1px solid var(--card-border);
 }
 
 .product-picture {
@@ -594,11 +700,11 @@ a {
 }
 
 .product-item:hover .buy-btn,
-.product-item:hover .bookmark-btn{
+.product-item:hover .bookmark-btn {
   visibility: visible;
 }
 
-.product-item:hover .product-picture{
+.product-item:hover .product-picture {
   visibility: hidden;
 }
 
@@ -613,19 +719,53 @@ a {
 }
 
 /* Pop brands */
+.brands-list {
+  display: grid;
+  grid-template-columns: repeat(4, 220px);
+  grid-template-rows: 145px 145px;
+  gap: 20px;
+}
 
 .brand-item {
   background-color: var(--main-bg);
   border: 1px solid var(--card-border);
 }
 
+.brand-item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
 /* Services */
 
 .services {
+  padding: 64px 0 100px;
   background-color: var(--additional-bg);
 }
 
+.services-columns{
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  column-gap: 80px;
+}
+
+.services-title{
+  grid-column: 1 / -1;
+}
+
+.services-intro{
+  grid-column: 1 / -1;
+  margin-bottom: 70px;
+}
+
 .service-tab {
+  height: 61px;
+  margin-bottom: 1px;
+  padding-top: 14px;
+  padding-left: 22px;
   font: normal 21px/30px var(--font-cuprum);
   font-weight: 700;
   background-color: var(--tab-bg);
@@ -640,11 +780,17 @@ a {
   color: var(--neutral-text);
 }
 
-.service-tab-active:hover{
+.service-tab-active:hover {
   background-color: var(--tab-bg-active);
 }
 
 /*  About */
+
+.index-columns{
+  display: grid;
+  grid-template-columns: 560px 1fr;
+  column-gap: 80px;
+}
 
 .about-logistics-list {
   font: normal 18px/24px var(--font-cuprum);
@@ -659,11 +805,40 @@ a {
 
 /* Footer */
 
+.footer-grid{
+  display: grid;
+  grid-template-columns: 1fr 560px;
+  grid-template-rows: 68px ;
+  gap: 10px 22px;
+  padding-bottom: 54px;
+}
+
 .site-footer {
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  min-height: 300px;
   font-style: normal;
   font-family: var(--font-cuprum);
   font-weight: 400;
   background-color: var(--basic-nav-bg);
+}
+
+.footer-nav{
+  grid-column: 2 / -1;
+  grid-row: 1 / -1;
+  justify-self: end;
+
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.footer-nav-link{
+  margin-left: 58px;
+}
+
+.footer-nav-link:first-of-type{
+  margin-left: 0;
 }
 
 .footer-nav-link,
@@ -672,13 +847,21 @@ a {
   line-height: 24px;
 }
 
-.footer-nav-link:hover{
+.footer-nav-link:hover {
   text-decoration: underline;
 }
 
-.footer-nav-link:active{
+.footer-nav-link:active {
   opacity: 0.5;
   text-decoration: none;
+}
+
+.footer-bar-grid{
+  display: grid;
+  grid-template-columns: 360px 240px 140px 140px;
+  align-items: center;
+  column-gap: 20px;
+  min-height: 107px;
 }
 
 .footer-details {
@@ -695,10 +878,14 @@ a {
   color: var(--accent-1);
 }
 
-/* TODO: перекинуть фон на контейнер */
-.footer-details,
-.social {
-  background-color: var(--additional-nav-bg);
+.footer-details-developer{
+  justify-self: center;
+}
+
+.social-list{
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 8px;
 }
 
 .social-item {
@@ -709,13 +896,14 @@ a {
 }
 
 .social-item:hover,
-.social-item:active{
+.social-item:active {
   background-color: var(--accent-1);
 }
 
 /* Popups */
 /* Может, серую полосу сделать через bg-image? */
 .popup {
+  position: fixed;
   background-color: var(--popup-footer-bg);
 }
 
@@ -724,22 +912,57 @@ a {
   background-color: var(--main-bg);
 }
 
-.cart-popup-text{
+.cart-popup-text {
   font: normal 24px/30px var(--font-cuprum);
   font-weight: 700;
+}
+
+.write-us-popup{
+  width: 620px;
+  height: 430px;
+}
+
+.write-us-form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows:
+  min-content
+  173px
+  min-content;
+  gap: 20px 13px;
+  justify-items: stretch;
+  padding: 46px 80px 0;
+  background-image: url("../img/bg-popup-bar.png");
+  background-repeat: repeat-x;
+  background-position: bottom;
 }
 
 .write-us-label {
   font: normal 18px/24px var(--font-cuprum);
 }
 
+.write-us-label-msg{
+  grid-column: 1 / -1;
+}
+
+.write-us-message{
+  width: 100%;
+  min-height: 114px;
+  resize: none;
+}
+
 .write-us-input {
+  width: 100%;
   font: normal 13px/24px var(--font-ptsans);
   border: 2px solid var(--input-basic);
   border-radius: 2px;
 }
 
-
+.send-btn{
+  grid-column: 1 / -1;
+  width: 100%;
+  margin: 37px auto;
+}
 
 /***  Catalog page  ***/
 
@@ -747,11 +970,11 @@ a {
   background-color: var(--accent-1);
 }
 
-.cart-link-filled:hover{
+.cart-link-filled:hover {
   background-color: var(--accent-1-hover);
 }
 
-.cart-link-filled:active{
+.cart-link-filled:active {
   background-color: var(--accent-1-active);
 }
 
@@ -815,7 +1038,7 @@ a {
 }
 
 .filter-brand-check:disabled ~ .filter-brand-label,
-.filter-power-radiobtn:disabled ~ .filter-power-label{
+.filter-power-radiobtn:disabled ~ .filter-power-label {
   color: var(--input-disabled-text);
 }
 
@@ -842,17 +1065,17 @@ a {
 
 /* Pagination */
 
-.page-number:hover{
+.page-number:hover {
   border-color: var(--paginataion-border-hover);
 }
 
-.page-number:active{
+.page-number:active {
   border-color: var(--accent-1);
 }
 
 .page-active,
 .page-active:hover,
-.page-active:active{
+.page-active:active {
   border: none;
 }
 
@@ -860,4 +1083,12 @@ a {
 
 .category {
   background-color: var(--additional-bg);
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
 }
