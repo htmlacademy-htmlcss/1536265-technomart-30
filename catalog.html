@@ -20,11 +20,11 @@
           <img src="img/logo-technomart.svg" width="108" height="18" alt="Логотип компании «Техномарт»">
         </a>
         <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
-          <input class="search-field" type="text" placeholder="Поиск">
+          <input class="search-field" type="text" placeholder="Поиск:">
           <button class="search-btn" type="submit">Найти</button>
         </form>
         <a class="bookmarks-link" href="blank.html">Закладки: <span class="bookmarks-counter">0</span></a>
-        <a class="cart-link" href="blank.html">Корзина: <span class="cart-counter">0</span></a>
+        <a class="cart-link cart-link-filled" href="blank.html">Корзина: <span class="cart-counter">10</span></a>
         <a class="order-link" href="blank.html">Оформить заказ</a>
       </div>
     </div>
@@ -79,15 +79,15 @@
           <fieldset class="filter-price">
             <legend class="filter-legend">Цена:</legend>
             <!-- Может, добавить в лэйблы скрытые подписи, для скринридеров, например? -->
-            <label>
+            <label class="filter-range-label">
               <input class="filter-price-range" type="range" id="filter-price-range" name="filter-price-range">
             </label>
             <label>
-              <input class="filter-price-min" type="text" id="filter-price-min" name="filter-price-min">
+              <input class="filter-price-min" type="text" id="filter-price-min" name="filter-price-min" value="0">
             </label>
             <span class="price-delimiter">—</span>
             <label>
-              <input class="filter-price-max" type="text" id="filter-price-max" name="filter-price-max">
+              <input class="filter-price-max" type="text" id="filter-price-max" name="filter-price-max" value="30000">
             </label>
           </fieldset>
           <fieldset class="filter-brands">
@@ -128,7 +128,7 @@
                   value="battery" checked>
                 <label class="filter-power-label" for="filter-power-battery">Аккумуляторные</label>
               </li>
-              <li>
+              <li class="filter-power-item">
                 <input class="filter-power-radiobtn" type="radio" name="filter-power" id="filter-power-wired"
                   value="wired">
                 <label class="filter-power-label" for="filter-power-wired">Сетевые</label>
@@ -319,7 +319,7 @@
       </section>
       <section class="footer-nav">
         <h2 class="visually-hidden">Ссылки</h2>
-        <ul class="footer-nav">
+        <ul class="footer-nav-list">
           <li class="footer-nav-link"><a href="blank.html">Компания</a></li>
           <li class="footer-nav-link"><a href="blank.html">Новости</a></li>
           <li class="footer-nav-link"><a href="catalog.html">Каталог</a></li>
@@ -339,13 +339,13 @@
         <section class="social">
           <h2 class="visually-hidden">Социальные сети</h2>
           <ul class="social-list">
-            <li class="social-item">
+            <li class="social-item social-vk">
               <a href="#">ВКонтакте</a>
             </li>
-            <li class="social-item">
+            <li class="social-item social-fb">
               <a href="#">Facebook</a>
             </li>
-            <li class="social-item">
+            <li class="social-item social-inst">
               <a href="#">Instagram</a>
             </li>
           </ul>
@@ -354,7 +354,7 @@
           <a href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
         </p>
         <p class="footer-details footer-details-developer">Разработано — <br>
-          <a href="https://htmlacademy.ru">HTML Academy</a>
+          <a href="https://htmlacademy.ru">htmlacademy.ru</a>
         </p>
       </div>
     </div>
